@@ -19,7 +19,7 @@ from rest_framework.permissions import (
 class ArticleListAPIView(ListAPIView):
     queryset = Article.objects.all()
     serializer_class = ArticleSerializer
-    filter_backends = [SearchFilter,OrderingFilter]
+    filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['title']
     pagination_class = ArticlePagination
 

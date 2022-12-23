@@ -1,12 +1,14 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from .forms import CreateUserForm
 from django.contrib import messages
-from django.contrib.auth import login,authenticate,logout
+from django.contrib.auth import login, authenticate, logout
 # from .decorators import unauthenticated_user
 
 # Create your views here.
 
 # @unauthenticated_user
+
+
 def registerPage(request):
     form = CreateUserForm()
     if request.method == 'POST':
@@ -18,26 +20,26 @@ def registerPage(request):
             return redirect('user:login')
 
     context = {'form': form}
-    return render(request,"register.html",context)
+    return render(request, "register.html", context)
 
 
 # @unauthenticated_user
-def loginPage(request):  
+def loginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
 
-        user = authenticate(request,username=username,password=password)
+        user = authenticate(request, username=username, password=password)
 
         if user is None:
-            messages.warning(request,'Username or password incorrect')
+            messages.warning(request, 'Username or password incorrect')
 
         else:
-            login(request,user)
+            login(request, user)
             return redirect('index')
 
     context = {}
-    return render(request,"login.html",context)
+    return render(request, "login.html", context)
 
 
 def logoutUser(request):

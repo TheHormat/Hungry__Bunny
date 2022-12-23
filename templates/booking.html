@@ -2,12 +2,12 @@
 {% load static %}
 
 {% block section %}
-  <!-- Page Header Start -->
-  <div class="page-header mb-0">
+<!-- Page Header Start -->
+<div class="page-header mb-0">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                {% if request.user.is_authenticated %}  
+                {% if request.user.is_authenticated %}
                 <h2>Rezervasiya</h2>
                 {% else %}
                 <h2>Xidmətlərimizdən yalnız hesabınıza daxil olduqda istifadə edə bilərsiniz!!!</h2>
@@ -19,7 +19,7 @@
 <!-- Page Header End -->
 
 
-{% if request.user.is_authenticated %}  
+{% if request.user.is_authenticated %}
 <!-- Booking Start -->
 <div class="booking">
     <div class="container">
@@ -31,11 +31,20 @@
                         <h2>Özəl dadlar və zaman ücün masanızı rezerv edin</h2>
                     </div>
                     <div class="about-text">
-                        <p>Təsadüfi deyil ki, Hungry Bunny Restoranı Azərbaycanın ən böyük memarı Jože Plečnik tərəfindən dizayn edilmiş Bakı şəhərində , 51 Zahid Xəlilov küçəsində yerləşir. Şəhərin səs-küyünün düz ortasında yerləşməsinə baxmayaraq, qonaqlarımızın dincələ və dinc şəkildə zərif mətbəxi təcrübə edə biləcəyi sakit və zərif bir qaçış təklif edir. Təmiz xətlər və daxili dekorasiyanın mükəmməlliyi bizi yenidən ziyarət etmək üçün səbirsizlənən bir çox turist üçün xüsusi təcrübədir.</p>
+                        <p>Təsadüfi deyil ki, Hungry Bunny Restoranı Azərbaycanın ən böyük memarı Jože Plečnik
+                            tərəfindən dizayn edilmiş Bakı şəhərində , 51 Zahid Xəlilov küçəsində yerləşir. Şəhərin
+                            səs-küyünün düz ortasında yerləşməsinə baxmayaraq, qonaqlarımızın dincələ və dinc şəkildə
+                            zərif mətbəxi təcrübə edə biləcəyi sakit və zərif bir qaçış təklif edir. Təmiz xətlər və
+                            daxili dekorasiyanın mükəmməlliyi bizi yenidən ziyarət etmək üçün səbirsizlənən bir çox
+                            turist üçün xüsusi təcrübədir.</p>
                         <p>
-                            <span style="color: red;">!</span> Rezervasyon tarixindən 7 gün əvvəl ləğv edildikdə, biz bütün avans ödənişini geri qaytaracağıq. <br>
-                            <span style="color: red;">!!</span> Tarixdən 2 gün əvvəl ləğv edildiyi təqdirdə avans ödənişinin 50%-ni geri qaytaracağıq. <br>
-                            <span style="color: red;">!!!</span> Tarixə 2 gündən az qalmış ləğv edildikdə, avans ödənişi geri qaytarılmayacaq.</p>
+                            <span style="color: red;">!</span> Rezervasyon tarixindən 7 gün əvvəl ləğv edildikdə, biz
+                            bütün avans ödənişini geri qaytaracağıq. <br>
+                            <span style="color: red;">!!</span> Tarixdən 2 gün əvvəl ləğv edildiyi təqdirdə avans
+                            ödənişinin 50%-ni geri qaytaracağıq. <br>
+                            <span style="color: red;">!!!</span> Tarixə 2 gündən az qalmış ləğv edildikdə, avans ödənişi
+                            geri qaytarılmayacaq.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -60,7 +69,8 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <input id="mobilenumber" value="" type="tel" class="form-control" placeholder="Telefon" required="required" />
+                                <input id="mobilenumber" value="" type="tel" class="form-control" placeholder="Telefon"
+                                    required="required" />
                                 <div style="display: flex;" class="input-group-append">
                                     <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
                                 </div>
@@ -76,7 +86,8 @@
 
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder=" Gün" data-target="#date" data-toggle="datetimepicker"/>
+                                <input type="text" class="form-control datetimepicker-input" placeholder=" Gün"
+                                    data-target="#date" data-toggle="datetimepicker" />
                                 <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
@@ -84,7 +95,8 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group time" id="time" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder=" Saat" data-target="#time" data-toggle="datetimepicker"/>
+                                <input type="text" class="form-control datetimepicker-input" placeholder=" Saat"
+                                    data-target="#time" data-toggle="datetimepicker" />
                                 <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
                                 </div>
@@ -128,7 +140,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn custom-btn"  id="basicalert" type="button">İndi Rezerv Edin</button>
+                            <button class="btn custom-btn" id="basicalert" type="button">İndi Rezerv Edin</button>
                         </div>
                         <script>
                             document.getElementById('basicalert').addEventListener('click', function () {
@@ -136,7 +148,7 @@
                                     'Təşəkkürlər!',
                                     'Qısa Müddətdə Sizinlə Əlaqə Saxlayacayıq!',
                                     'success'
-                                    )
+                                )
                             });
                         </script>
                         {% csrf_token %}
@@ -152,8 +164,3 @@
 
 
 {% endblock section %}
-        
-        
-        
-
-        

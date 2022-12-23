@@ -1,4 +1,4 @@
-from rest_framework.filters import SearchFilter,OrderingFilter
+from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import (
     ListAPIView,
     RetrieveAPIView,
@@ -19,7 +19,7 @@ from rest_framework.permissions import (
 class PostListAPIView(ListAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    filter_backends = [SearchFilter,OrderingFilter]
+    filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['title']
     pagination_class = PostPagination
 
@@ -44,7 +44,7 @@ class PostUpdateAPIView(UpdateAPIView):
     permission_classes = [IsOwner]
 
     def perform_update(self, serializer):
-        serializer.save(modified_by = self.request.user)
+        serializer.save(modified_by=self.request.user)
 
 
 class PostCreateAPIView(CreateAPIView):
@@ -53,5 +53,4 @@ class PostCreateAPIView(CreateAPIView):
     permission_classes = [IsAuthenticated]
 
     def perform_create(self, serializer):
-        serializer.save(user = self.request.user)
-
+        serializer.save(user=self.request.user)

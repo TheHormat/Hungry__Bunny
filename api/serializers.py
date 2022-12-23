@@ -22,6 +22,5 @@ class PostSerializer(serializers.ModelSerializer):
             'modified_by',
         ]
 
-    def get_username(self,obj):
+    def get_username(self, obj):
         return str(obj.user.username)
-

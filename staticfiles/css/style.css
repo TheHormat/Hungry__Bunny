@@ -1,4 +1,4 @@
-.addarticle label{
+.addarticle label {
     font-family: 'Nunito', sans-serif;
     color: black;
 }
@@ -58,7 +58,8 @@
     color: #333;
 }
 
-.input_box .name:focus, .dob:focus {
+.input_box .name:focus,
+.dob:focus {
     -webkit-box-shadow: 0 0 2px 1px #fdbe33;
     -moz-box-shadow: 0 0 2px 1px #fdbe33;
     box-shadow: 0 0 2px 1px #fdbe33;
@@ -248,8 +249,8 @@
 .shop-item-image {
     height: 230px;
     width: 320px;
-    box-shadow: 5px 5px 15px 5px #FFBB29; 
-    border-radius:20px;
+    box-shadow: 5px 5px 15px 5px #FFBB29;
+    border-radius: 20px;
     margin-bottom: 10px;
 }
 
@@ -260,16 +261,16 @@
     padding: 5px;
 }
 
-.shop-item-details span{
-    font-size:22px;
+.shop-item-details span {
+    font-size: 22px;
 }
 
-.shop-item-details span i{
+.shop-item-details span i {
     font-size: 15px;
 }
 
 
-.shop-item-button{
+.shop-item-button {
     background-color: #FFBB29;
 }
 
@@ -384,7 +385,7 @@
     display: block;
     margin: 40px auto 80px auto;
     font-size: 1.75em;
-} 
+}
 
 .portfolio-item .portfolio-img {
     position: relative;
@@ -394,11 +395,11 @@
     left: 0;
     transition: .5s;
 }
-  
+
 .portfolio-item:hover .portfolio-img {
     bottom: 100%;
 }
-  
+
 .portfolio-item .portfolio-text {
     position: absolute;
     width: 100%;
@@ -407,14 +408,14 @@
     left: 0;
     transition: .5s;
 }
-  
+
 .portfolio-item:hover .portfolio-text {
     bottom: 0;
 }
 
-.service{
+.service {
     display: flex;
-    justify-content:right;
+    justify-content: right;
 }
 
 .service {
@@ -516,10 +517,10 @@ body {
 }
 
 h1,
-h2, 
-h3, 
+h2,
+h3,
 h4,
-h5, 
+h5,
 h6 {
     color: #454545;
     font-family: 'Nunito', sans-serif;
@@ -592,8 +593,10 @@ a:focus {
     background: #719a0a;
 }
 
-[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
-[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+[class^="flaticon-"]:before,
+[class*=" flaticon-"]:before,
+[class^="flaticon-"]:after,
+[class*=" flaticon-"]:after {
     font-size: inherit;
     margin-left: 0;
 }
@@ -619,7 +622,7 @@ a:focus {
     font-weight: 700;
     font-family: 'Nunito', sans-serif;
     transition: .5s;
-    
+
 }
 
 .navbar .navbar-brand img {
@@ -642,16 +645,16 @@ a:focus {
         background: transparent !important;
         z-index: 9;
     }
-    
+
     .navbar.nav-sticky {
         padding: 10px 60px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #fbaf32;
     }
-    
+
     .navbar.nav-sticky .navbar-brand {
         color: #fbaf32;
     }
@@ -664,7 +667,7 @@ a:focus {
         font-size: 18px;
         font-weight: 600;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link,
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #666666;
@@ -674,31 +677,31 @@ a:focus {
     .navbar-light .navbar-nav .nav-link.active {
         color: #fbaf32;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
         color: #fbaf32;
     }
 }
 
-@media (max-width: 991.98px) {   
+@media (max-width: 991.98px) {
     .navbar {
         padding: 15px;
         background: #ffffff !important;
     }
-    
+
     .navbar .navbar-brand {
         color: #fbaf32;
     }
-    
+
     .navbar .navbar-nav {
         margin-top: 15px;
     }
-    
+
     .navbar a.nav-link {
         padding: 5px;
     }
-    
+
     .navbar .dropdown-menu {
         box-shadow: none;
     }
@@ -811,20 +814,21 @@ a:focus {
 }
 
 @media (max-width: 991.98px) {
+
     .carousel,
     .carousel .carousel-item,
     .carousel .carousel-text {
         height: calc(100vh - 105px);
     }
-    
+
     .carousel .carousel-text h1 {
         font-size: 35px;
     }
-    
+
     .carousel .carousel-text p {
         font-size: 16px;
     }
-    
+
     .carousel .carousel-text .btn {
         padding: 12px 30px;
         font-size: 15px;
@@ -833,16 +837,17 @@ a:focus {
 }
 
 @media (max-width: 767.98px) {
+
     .carousel,
     .carousel .carousel-item,
     .carousel .carousel-text {
         height: calc(100vh - 70px);
     }
-    
+
     .carousel .carousel-text h1 {
         font-size: 30px;
     }
-    
+
     .carousel .carousel-text .btn {
         padding: 10px 25px;
         font-size: 15px;
@@ -854,7 +859,7 @@ a:focus {
     .carousel .carousel-text h1 {
         font-size: 25px;
     }
-    
+
     .carousel .carousel-text .btn {
         padding: 8px 20px;
         font-size: 14px;
@@ -911,7 +916,7 @@ a:focus {
     .page-header h2 {
         font-size: 35px;
     }
-    
+
     .page-header a {
         font-size: 18px;
     }
@@ -1121,14 +1126,15 @@ a:focus {
 
 
 @keyframes pulse-border {
-  0% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-    opacity: 0;
-  }
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
 }
 
 .feature {
@@ -1305,6 +1311,7 @@ a:focus {
 }
 
 @media(max-width: 575.98px) {
+
     .menu .menu-text p,
     .menu .menu-text h3,
     .menu .menu-text h3 span,
@@ -1314,16 +1321,16 @@ a:focus {
         padding: 0;
         margin: 0;
     }
-    
+
     .menu .menu-text h3 {
         font-size: 18px;
         margin-bottom: 0;
     }
-    
+
     .menu .menu-text h3 span {
         margin-bottom: 3px;
     }
-    
+
     .menu .menu-text h3::after {
         display: none;
     }
@@ -1533,7 +1540,7 @@ a:focus {
     color: #999999;
 }
 
-@media(max-width: 575.98px){
+@media(max-width: 575.98px) {
     .blog .blog-meta p {
         flex: 50%;
         font-size: 13px;
@@ -1902,11 +1909,11 @@ a:focus {
 }
 
 .sidebar .category-widget ul li {
-    margin: 0 0 12px 22px; 
+    margin: 0 0 12px 22px;
 }
 
 .sidebar .category-widget ul li:last-child {
-    margin-bottom: 0; 
+    margin-bottom: 0;
 }
 
 .sidebar .category-widget ul li a {
@@ -2097,7 +2104,7 @@ a:focus {
     background: #719a0a;
 }
 
-.footer-newsletter ::placeholder{
+.footer-newsletter ::placeholder {
     color: white;
 }
 

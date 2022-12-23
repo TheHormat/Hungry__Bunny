@@ -9,7 +9,7 @@ from .views import (
 app_name = "post"
 
 urlpatterns = [
-    path('list',PostListAPIView.as_view(),name='list'),
+    path('list', PostListAPIView.as_view(), name='list'),
     path('detail/<slug>', PostDetailAPIView.as_view(), name='detail'),
     path('delete/<pk>', PostDeleteAPIView.as_view(), name='delete'),
     path('update/<pk>', PostUpdateAPIView.as_view(), name='update'),

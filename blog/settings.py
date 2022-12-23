@@ -1,4 +1,5 @@
 
+from datetime import timedelta
 import os
 from pathlib import Path
 
@@ -26,7 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # MyApp
     'user',
     'home',
@@ -139,3 +140,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ALERT MESSAGES
 MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
+REST_FRAMEWORK = {
+   'DEFAULT_AUTHENTICATION_CLASSES': (
+       'rest_framework.authentication.TokenAuthentication',
+   ),
+   'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated'
+   ),
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME':timedelta(minutes=15)
+}

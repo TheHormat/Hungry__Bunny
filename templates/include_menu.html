@@ -17,21 +17,22 @@
             </ul>
             <div class="tab-content">
                 <div id="burgers-sfr" class="container tab-pane active">
-                    <div class="row"> 
-                    <section class="container content-section">
-                        <div class="shop-items">
-                            {% for t in burger_menu %}
-                            <div class="shop-item">
-                                <span class="shop-item-title">{{t.name}}</span>
-                                <img data-tilt class="shop-item-image" src="{{t.image.url}}">
-                                <div class="shop-item-details">
-                                    <span class="shop-item-price">{{t.price}}<i class="fa-solid fa-manat-sign"></i></span>
-                                    <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
+                    <div class="row">
+                        <section class="container content-section">
+                            <div class="shop-items">
+                                {% for t in burger_menu %}
+                                <div class="shop-item">
+                                    <span class="shop-item-title">{{t.name}}</span>
+                                    <img data-tilt class="shop-item-image" src="{{t.image.url}}">
+                                    <div class="shop-item-details">
+                                        <span class="shop-item-price">{{t.price}}<i
+                                                class="fa-solid fa-manat-sign"></i></span>
+                                        <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
+                                    </div>
                                 </div>
+                                {% endfor %}
                             </div>
-                            {% endfor %}
-                        </div>
-                    </section>
+                        </section>
                     </div>
                 </div>
                 <div id="snacks-sfr" class="container tab-pane fade">
@@ -43,11 +44,12 @@
                                     <span class="shop-item-title">{{d.name}}</span>
                                     <img data-tilt class="shop-item-image" src="{{d.image.url}}">
                                     <div class="shop-item-details">
-                                        <span class="shop-item-price">{{d.price}}<i class="fa-solid fa-manat-sign"></i></span>
+                                        <span class="shop-item-price">{{d.price}}<i
+                                                class="fa-solid fa-manat-sign"></i></span>
                                         <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
                                     </div>
                                 </div>
-                                {% endfor %}    
+                                {% endfor %}
                             </div>
                         </section>
                     </div>
@@ -56,16 +58,17 @@
                     <div class="row">
                         <section class="container content-section">
                             <div class="shop-items">
-                                {% for s in set_menu %}  
+                                {% for s in set_menu %}
                                 <div class="shop-item">
                                     <span class="shop-item-title">{{s.name}}</span>
                                     <img data-tilt class="shop-item-image" src="{{s.image.url}}">
                                     <div class="shop-item-details">
-                                        <span class="shop-item-price">{{s.price}}<i class="fa-solid fa-manat-sign"></i></span>
+                                        <span class="shop-item-price">{{s.price}}<i
+                                                class="fa-solid fa-manat-sign"></i></span>
                                         <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
                                     </div>
                                 </div>
-                                {% endfor %}     
+                                {% endfor %}
                             </div>
                         </section>
                     </div>
@@ -75,5 +78,3 @@
     </div>
 </div>
 <!-- Menu End -->
-
-

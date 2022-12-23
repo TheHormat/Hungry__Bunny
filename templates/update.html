@@ -4,30 +4,30 @@
 
 {% block section %}
 
-   <!-- Page Header Start -->
-   <div class="page-header mb-0">
+<!-- Page Header Start -->
+<div class="page-header mb-0">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h2>Yorumunu Güncəllə</i></h2>
             </div>
-            
+
         </div>
     </div>
-   </div>
+</div>
 <!-- Page Header End -->
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <br>
-        <h3>Sənin düşüncələrini maraqla gözləyirik  </h3>
+        <h3>Sənin düşüncələrini maraqla gözləyirik </h3>
         <hr>
-        <form enctype="multipart/form-data" method = 'post'>
+        <form enctype="multipart/form-data" method='post'>
             {% csrf_token %}
             {{form|crispy}}
             <br>
-            <button type="submit" class = 'btn btn-warning'>Güncəllə</button>
-            <button type="submit" href="/articles/update" class = 'btn btn-danger'>Geri Dön</button>
+            <button type="submit" class='btn btn-warning'>Güncəllə</button>
+            <button type="submit" href="/articles/update" class='btn btn-danger'>Geri Dön</button>
 
         </form>
     </div>

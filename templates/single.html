@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-        
+
 {% block section %}
-   <!-- Page Header Start -->
-   <div class="page-header">
+<!-- Page Header Start -->
+<div class="page-header">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -22,51 +22,54 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-                <div class="single-content">  
+                <div class="single-content">
 
                     {% if articles %}
 
-                    <h2 style="text-align: center; margin:20px;"> Müştərilərimizin Rəyləri  </h2>
-                    
-                            {% for article in articles %}                   
+                    <h2 style="text-align: center; margin:20px;"> Müştərilərimizin Rəyləri </h2>
 
-                            <div style="border-radius:20px;" class="single-bio">
-                                <div class="single-bio-text">
-                                    <h3><a href="#">{{article.author}} <span style="color: #719a0a;"> deyib ki :</span></a></h3> <hr>
-                                    <h4><a style="color: black;">{{article.title}}</a></h4>
-                                    <p>
-                                        <span style="color:black; font-size:large; "></span> {{article.content}}
-                                    </p>
-                                    <br>
+                    {% for article in articles %}
 
-                                    <form action="{% url 'article:like-post' %}" method="POST" class="ui form">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="post_id" value="{{ article.id }}">
-                                        
-                                        {% if user not in article.liked.all %}
-                                            <button class="ui btn btn-primary" type="submit"><i class="fa-solid fa-thumbs-up"></i></button>
-                                        {% else %}
-                                            <button class="ui btn btn-danger" type="submit"><i class="fa-solid fa-thumbs-down"></i></button>
-                                        {% endif %}
-                                        <strong> Bəyənilər : {{article.liked.all.count}}</strong>
-                                    </form>
-                                    <br>  
+                    <div style="border-radius:20px;" class="single-bio">
+                        <div class="single-bio-text">
+                            <h3><a href="#">{{article.author}} <span style="color: #719a0a;"> deyib ki :</span></a></h3>
+                            <hr>
+                            <h4><a style="color: black;">{{article.title}}</a></h4>
+                            <p>
+                                <span style="color:black; font-size:large; "></span> {{article.content}}
+                            </p>
+                            <br>
 
-                                      <span>{{article.created_date}}</span>
-                                </div>
-                            </div>
-                            {% endfor %}
-                    
-                        </tbody>
+                            <form action="{% url 'article:like-post' %}" method="POST" class="ui form">
+                                {% csrf_token %}
+                                <input type="hidden" name="post_id" value="{{ article.id }}">
+
+                                {% if user not in article.liked.all %}
+                                <button class="ui btn btn-primary" type="submit"><i
+                                        class="fa-solid fa-thumbs-up"></i></button>
+                                {% else %}
+                                <button class="ui btn btn-danger" type="submit"><i
+                                        class="fa-solid fa-thumbs-down"></i></button>
+                                {% endif %}
+                                <strong> Bəyənilər : {{article.liked.all.count}}</strong>
+                            </form>
+                            <br>
+
+                            <span>{{article.created_date}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    </tbody>
                     </table>
-                    
+
                     {% else %}
-                    
+
                     <div style="text-align: center; margin:20px" class="alert alert-danger">
                         Yorumunuz Mövcud Deyil...
-                    
+
                     </div>
-                    
+
                     {% endif %}
 
                 </div>
@@ -136,7 +139,8 @@
                         <div class="search-widget">
                             <form>
                                 {% csrf_token %}
-                                <input name="keyword" maxlength="64" class="form-control" type="text" placeholder="Axtar">
+                                <input name="keyword" maxlength="64" class="form-control" type="text"
+                                    placeholder="Axtar">
                                 <button type="submit" class="btn"><i class="fa fa-search"></i></button>
                             </form>
                         </div>
@@ -320,7 +324,7 @@
                                 <li><a href="">Keyfiyyət</a></li>
                                 <li><a href="">Xidmət</a></li>
                                 <li><a href="">Yaşam Tərzi</a></li>
-                                <li><a href="">Məkanlar</a></li>                                                                                                                                  
+                                <li><a href="">Məkanlar</a></li>
                             </ul>
                         </div>
                     </div>
@@ -347,7 +351,9 @@
                         <h2 class="widget-title">Qısa Mesajımız</h2>
                         <div class="text-widget">
                             <p>
-                                Sizə xidmət etmək bizə çox böyük sevinc və qurur verir.Daim xidmətinizdə durmağa hazırıq.Sizin xoş yorumlarınız və  bizi bəyənməyiniz , seçməyiniz bizi dahada həvəsləndirir.
+                                Sizə xidmət etmək bizə çox böyük sevinc və qurur verir.Daim xidmətinizdə durmağa
+                                hazırıq.Sizin xoş yorumlarınız və bizi bəyənməyiniz , seçməyiniz bizi dahada
+                                həvəsləndirir.
                             </p>
                         </div>
                     </div>
@@ -356,6 +362,6 @@
         </div>
     </div>
 </div>
-<!-- Single Post End-->   
+<!-- Single Post End-->
 
-{% endblock section %}   
+{% endblock section %}

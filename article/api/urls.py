@@ -7,6 +7,7 @@ from .views import (
     ArticleCreateAPIView,
 )
 
+
 urlpatterns = [
     path('list',ArticleListAPIView.as_view(),name='list'),
     path('detail/<pk>', ArticleDetailAPIView.as_view(), name='detail'),
