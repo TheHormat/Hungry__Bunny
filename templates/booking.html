@@ -8,9 +8,9 @@
         <div class="row">
             <div class="col-12">
                 {% if request.user.is_authenticated %}
-                <h2>Rezervasiya</h2>
+                <h2>Reservation</h2>
                 {% else %}
-                <h2>Xidmətlərimizdən yalnız hesabınıza daxil olduqda istifadə edə bilərsiniz!!!</h2>
+                <h2>You can use our services only when you are logged in to your account !!!</h2>
                 {% endif %}
             </div>
         </div>
@@ -21,29 +21,35 @@
 
 {% if request.user.is_authenticated %}
 <!-- Booking Start -->
+<!-- Booking Start -->
 <div class="booking">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <div class="booking-content">
                     <div class="section-header">
-                        <p>Rezerv Edin</p>
-                        <h2>Özəl dadlar və zaman ücün masanızı rezerv edin</h2>
+                        <p>Make a reservation</p>
+                        <h2>Reserve your table for special tastes and times</h2>
                     </div>
                     <div class="about-text">
-                        <p>Təsadüfi deyil ki, Hungry Bunny Restoranı Azərbaycanın ən böyük memarı Jože Plečnik
-                            tərəfindən dizayn edilmiş Bakı şəhərində , 51 Zahid Xəlilov küçəsində yerləşir. Şəhərin
-                            səs-küyünün düz ortasında yerləşməsinə baxmayaraq, qonaqlarımızın dincələ və dinc şəkildə
-                            zərif mətbəxi təcrübə edə biləcəyi sakit və zərif bir qaçış təklif edir. Təmiz xətlər və
-                            daxili dekorasiyanın mükəmməlliyi bizi yenidən ziyarət etmək üçün səbirsizlənən bir çox
-                            turist üçün xüsusi təcrübədir.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cupiditate similique, numquam,
+                            minima blanditiis at voluptas fuga rerum deleniti laborum mollitia expedita veritatis
+                            accusantium delectus reiciendis nam aliquam quisquam facere quasi iusto voluptatum
+                            laboriosam nulla? Necessitatibus perferendis tempora sed iure quo, est dignissimos. Error in
+                            eveniet doloribus porro doloremque, adipisci laborum, nam numquam ea, explicabo quam
+                            voluptatibus exercitationem officiis. Sed harum recusandae tempora voluptas fuga! Cum,
+                            labore. Doloremque numquam corrupti similique eius excepturi. Asperiores fugit molestiae
+                            ratione voluptates nulla anes quos animi. Ad amet quae, iusto quo nostrum,
+                            eveniet voluptate quis nihil nesciunt architecto voluptas. Deleniti iste quae ab officia. A
+                            possimus sed itaque molestiae mollitia tenetur. Quia earum voluptate nihil corrupti
+                            consequuntur.</p>
                         <p>
-                            <span style="color: red;">!</span> Rezervasyon tarixindən 7 gün əvvəl ləğv edildikdə, biz
-                            bütün avans ödənişini geri qaytaracağıq. <br>
-                            <span style="color: red;">!!</span> Tarixdən 2 gün əvvəl ləğv edildiyi təqdirdə avans
-                            ödənişinin 50%-ni geri qaytaracağıq. <br>
-                            <span style="color: red;">!!!</span> Tarixə 2 gündən az qalmış ləğv edildikdə, avans ödənişi
-                            geri qaytarılmayacaq.
+                            <span style="color: red;">!</span> If the reservation is canceled 7 days before the
+                            reservation date, we will refund the entire advance payment. <br>
+                            <span style="color: red;">!!</span> We will refund 50% of the advance payment if canceled 2
+                            days before the date. <br>
+                            <span style="color: red;">!!!</span> If canceled less than 2 days prior to the date, the
+                            advance payment will not be refunded.
                         </p>
                     </div>
                 </div>
@@ -53,7 +59,7 @@
                     <form>
                         <div class="control-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Ad" required="required" />
+                                <input type="text" class="form-control" placeholder="Name" required="required" />
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="far fa-user"></i></div>
                                 </div>
@@ -69,7 +75,7 @@
                         </div>
                         <div class="control-group">
                             <div class="input-group">
-                                <input id="mobilenumber" value="" type="tel" class="form-control" placeholder="Telefon"
+                                <input id="mobilenumber" type="text" class="form-control" placeholder="Phone Numberr"
                                     required="required" />
                                 <div style="display: flex;" class="input-group-append">
                                     <div class="input-group-text"><i class="fa fa-mobile-alt"></i></div>
@@ -77,25 +83,19 @@
                             </div>
                         </div>
 
-                        <script type="text/javascript">
-                            document.getElementById('mobilenumber').addEventListener('input', function (y) {
-                                var a = y.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
-                                y.target.value = !a[2] ? a[1] : '(' + a[1] + ') ' + a[2] + (a[3] ? '-' + a[3] : '');
-                            });
-                        </script>
-
                         <div class="control-group">
                             <div class="input-group date" id="date" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder=" Gün"
+                                <input type="text" class=" mask form-control datetimepicker-input" placeholder="Date"
                                     data-target="#date" data-toggle="datetimepicker" />
                                 <div class="input-group-append" data-target="#date" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="control-group">
                             <div class="input-group time" id="time" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" placeholder=" Saat"
+                                <input type="text" class="form-control datetimepicker-input" placeholder=" Time"
                                     data-target="#time" data-toggle="datetimepicker" />
                                 <div class="input-group-append" data-target="#time" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="far fa-clock"></i></div>
@@ -105,14 +105,10 @@
                         <div class="control-group">
                             <div class="input-group">
                                 <select style="background-color: orange;" class="custom-select form-control">
-                                    <option selected>Hansı Filialımız?</option>
-                                    <option value="1">Nərmanov </option>
+                                    <option selected>Which Branch?</option>
+                                    <option value="1">Narmanov </option>
                                     <option value="2">Nizami </option>
-                                    <option value="3">İnşaatçılar </option>
-                                    <option value="4">Elmlər </option>
-                                    <option value="5">28 May </option>
-                                    <option value="6">Gənclik </option>
-
+                                    <option value="3">28 May </option>
                                 </select>
                                 <div class="input-group-append">
                                     <div class="input-group-text"><i class="fa fa-chevron-down"></i></div>
@@ -122,7 +118,7 @@
                         <div class="control-group">
                             <div class="input-group">
                                 <select style="background-color: orange;" class="custom-select form-control">
-                                    <option selected>Neçə Nəfər</option>
+                                    <option selected>How many people?</option>
                                     <option value="1">1 </option>
                                     <option value="2">2 </option>
                                     <option value="3">3 </option>
@@ -140,13 +136,13 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn custom-btn" id="basicalert" type="button">İndi Rezerv Edin</button>
+                            <button id="basicAlert" class="btn custom-btn" type="button">Book Now</button>
                         </div>
                         <script>
-                            document.getElementById('basicalert').addEventListener('click', function () {
+                            document.getElementById('basicAlert').addEventListener('click', function () {
                                 Swal.fire(
-                                    'Təşəkkürlər!',
-                                    'Qısa Müddətdə Sizinlə Əlaqə Saxlayacayıq!',
+                                    'Thanks!',
+                                    'A return will be made shortly !',
                                     'success'
                                 )
                             });

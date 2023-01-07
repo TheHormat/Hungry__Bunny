@@ -6,13 +6,13 @@
         <div class="menu-tab">
             <ul class="nav nav-pills justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="pill" href="#burgers-sfr">Dönərlər</a>
+                    <a class="nav-link active" data-toggle="pill" href="#burgers-sfr">Burgers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#snacks-sfr">İçkilər</a>
+                    <a class="nav-link" data-toggle="pill" href="#snacks-sfr">Drinks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="pill" href="#beverages-sfr">Setlər</a>
+                    <a class="nav-link" data-toggle="pill" href="#beverages-sfr">Sets</a>
                 </li>
             </ul>
             <div class="tab-content">
@@ -25,9 +25,8 @@
                                     <span class="shop-item-title">{{t.name}}</span>
                                     <img data-tilt class="shop-item-image" src="{{t.image.url}}">
                                     <div class="shop-item-details">
-                                        <span class="shop-item-price">{{t.price}}<i
-                                                class="fa-solid fa-manat-sign"></i></span>
-                                        <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
+                                        <span class="shop-item-price">{{t.price}}$</span>
+                                        <button class="btn btn-primary shop-item-button" type="button">Add</button>
                                     </div>
                                 </div>
                                 {% endfor %}
@@ -44,9 +43,8 @@
                                     <span class="shop-item-title">{{d.name}}</span>
                                     <img data-tilt class="shop-item-image" src="{{d.image.url}}">
                                     <div class="shop-item-details">
-                                        <span class="shop-item-price">{{d.price}}<i
-                                                class="fa-solid fa-manat-sign"></i></span>
-                                        <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
+                                        <span class="shop-item-price">{{d.price}}$</span>
+                                        <button class="btn btn-primary shop-item-button" type="button">Add</button>
                                     </div>
                                 </div>
                                 {% endfor %}
@@ -63,9 +61,8 @@
                                     <span class="shop-item-title">{{s.name}}</span>
                                     <img data-tilt class="shop-item-image" src="{{s.image.url}}">
                                     <div class="shop-item-details">
-                                        <span class="shop-item-price">{{s.price}}<i
-                                                class="fa-solid fa-manat-sign"></i></span>
-                                        <button class="btn btn-primary shop-item-button" type="button">Əlavə Et</button>
+                                        <span class="shop-item-price">{{s.price}}$</span>
+                                        <button class="btn btn-primary shop-item-button" type="button">Add</button>
                                     </div>
                                 </div>
                                 {% endfor %}

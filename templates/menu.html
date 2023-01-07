@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>Menyu və Sifariş Bölməsi</h2>
+                <h2>Menu and Order Section</h2>
             </div>
         </div>
     </div>
@@ -24,18 +24,18 @@
     <center style="color:black; font-size:40px; font-family: 'Nunito', sans-serif;" class="section-header">Sifarişlərim
     </center>
     <div class="cart-row">
-        <span class="cart-item cart-header cart-column">Sifarişiniz</span>
-        <span class="cart-price cart-header cart-column">Qiymət</span>
-        <span class="cart-quantity cart-header cart-column">Miqdar</span>
+        <span class="cart-item cart-header cart-column">Your order</span>
+        <span class="cart-price cart-header cart-column">Price</span>
+        <span class="cart-quantity cart-header cart-column">Quantity</span>
     </div>
     <div class="cart-items">
     </div>
     <div class="cart-total">
-        <strong class="cart-total-title">Ümumi hesap : </strong>
-        <span style="color: green; font-size:23px;" class="cart-total-price"><i class="fa-solid fa-manat-sign"></i>
+        <strong class="cart-total-title">Amount : </strong>
+        <span style="color: green; font-size:23px;" class="cart-total-price">$
             0</span>
     </div>
-    <a href="/paypal"><button class="btn btn-primary btn-purchase" type="button">Sifariş Et</button></a>
+    <a href="/paypal"><button class="btn btn-primary btn-purchase" type="button">Confirm</button></a>
 </section>
 
 <!-- ------------------------------------------------------------------------------------------- -->
@@ -111,7 +111,7 @@
             if (cartItemNames[i].innerText == title) {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Səbəti Yoxla !!!',
+                    title: 'Check out the cart !!!',
                 })
                 return
             }
@@ -126,7 +126,7 @@
 
             <div class="cart-quantity cart-column">
                 <input class="cart-quantity-input" type="number" value="1">
-                <button style='width:90px;' class="btn btn-danger" type="button">Sil</button>
+                <button style='width:90px;' class="btn btn-danger" type="button">Delete</button>
             </div>`
         cartRow.innerHTML = cartRowContents
         cartItems.append(cartRow)
@@ -147,7 +147,7 @@
             total = total + (price * quantity)
         }
         total = Math.round(total * 100) / 100
-        document.getElementsByClassName('cart-total-price')[0].innerText = total + ' Manat'
+        document.getElementsByClassName('cart-total-price')[0].innerText = total + ' $'
     }
 
 </script>

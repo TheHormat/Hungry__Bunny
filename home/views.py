@@ -3,6 +3,7 @@ from article.forms import ArticleForm
 from article.models import Article, Like
 from home.models import BurgerMenu, DrinkMenu, SetMenu
 from django.contrib.auth.decorators import login_required
+from article.forms import SendMailMessageForm
 
 
 @login_required(login_url='user:login/')
@@ -39,6 +40,13 @@ def addarticle_view(request):
 
 @login_required(login_url='user:login')
 def home_view(request):
+    form = SendMailMessageForm()
+    if request.method == 'POST':
+        form = SendMailMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('index')
+      
     burger_menu = BurgerMenu.objects.all()
     drink_menu = DrinkMenu.objects.all()
     set_menu = SetMenu.objects.all()
@@ -47,6 +55,7 @@ def home_view(request):
         'burger_menu': burger_menu,
         'drink_menu': drink_menu,
         'set_menu': set_menu,
+        'form': form,
     }
     return render(request, 'index.html', context)
 
@@ -111,7 +120,16 @@ def booking_view(request):
 
 @login_required(login_url='user:login')
 def contact_view(request):
-    return render(request, 'contact.html', {})
+    form = SendMailMessageForm()
+    if request.method == 'POST':
+        form = SendMailMessageForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('index')
+      
+    context = {"form":form}
+
+    return render(request,'contact.html',context)
 
 
 def delete_view(request, id):

@@ -10,9 +10,11 @@
         <div class="row">
             <div class="col-12">
                 <h2><i class="fa-solid fa-user"></i></h2>
-                <h2>Şəxsi Kabinet</h2>
-                <h3 style="color: white;">Xoş Gəldin <span style="color: #fdbe33;"> {{request.user.username}} </span>
+                <h2>Profile</h2>
+                <h3 style="color: white;">Welcome <span style="color: #fdbe33;"> {{request.user.username}} </span>
                 </h3>
+                <a style="padding: 10px; font-size:smaller;" class="btn btn-sm btn-danger" href="{% url 'user:delete_user' user.id %}"><i
+                        class="fa-solid fa-user-xmark"></i></a>
             </div>
         </div>
     </div>
@@ -25,13 +27,13 @@
             <div class="col-lg-8">
                 <div class="single-content">
                     <div style="text-align: center;">
-                        <a style="margin: 10px;" class="btn custom-btn" href="/articles/addarticle"> Rəy Bildir</a>
+                        <a style="margin: 10px;" class="btn custom-btn" href="/articles/addarticle"> Share Comment</a>
                         <hr>
                     </div>
 
                     {% if articles %}
 
-                    <h2 style="text-align: center; margin:20px;"> Rəylərin </h2>
+                    <h2 style="text-align: center; margin:20px;"> Your Comments </h2>
 
                     {% for article in articles %}
 
@@ -62,7 +64,7 @@
                     {% else %}
 
                     <div style="text-align:center;  margin:20px;" class="alert alert-danger">
-                        Hələki Yorumunuz Yoxdur ...
+                        You have no comments yet... ...
 
                     </div>
 
@@ -82,12 +84,12 @@
                         </div>
 
                         <div class="sidebar-widget">
-                            <h2 class="widget-title">Bizi Seçdiyiniz Üçün Minnətdarıq</h2>
+                            <h2 class="widget-title">Thank you for choosing us</h2>
                             <div class="text-widget">
                                 <p>
-                                    Sizə xidmət etmək bizə çox böyük sevinc və qurur verir.Daim xidmətinizdə durmağa
-                                    hazırıq.Sizin xoş yorumlarınız və bizi bəyənməyiniz , seçməyiniz bizi dahada
-                                    həvəsləndirir.
+                                    It gives us great joy and satisfaction to serve you. We are always ready to be at
+                                    your service. Your kind comments and your liking and choosing us encourage us even
+                                    more.
                                 </p>
                             </div>
                         </div>

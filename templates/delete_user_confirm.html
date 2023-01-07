@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block section %}
+<!-- Page Header Start -->
+<div class="page-header mb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Delete account?</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Yes <i class="fa-solid fa-user-minus"></i></button>
+                    <button style="background-color:#fbaf32; border:none;" class="btn btn-info"><a style="color: white;" href="{% url 'index' %}">No</a></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+    
+{% endblock section %}

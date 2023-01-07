@@ -67,25 +67,25 @@
                 <div class="navbar-nav ml-auto">
 
                     <a href="/" aria-hidden="true"
-                        class="nav-item nav-link {% if 'index' in request.path %} active {% endif %}">Ana Səhifə</a>
+                        class="nav-item nav-link {% if 'index' in request.path %} active {% endif %}">Home</a>
                     <a href="/about" aria-hidden="true"
-                        class="nav-item nav-link  {% if 'about' in request.path %} active {% endif%}">Haqqımızda</a>
+                        class="nav-item nav-link  {% if 'about' in request.path %} active {% endif%}">About Us</a>
                     {% if request.user.is_authenticated %}
                     <a href="/booking" aria-hidden="true"
-                        class="nav-item nav-link {% if 'booking' in request.path %} active {% endif%}">Rezervasiya</a>
+                        class="nav-item nav-link {% if 'booking' in request.path %} active {% endif%}">Reservation</a>
                     <a href="/menu" aria-hidden="true"
-                        class="nav-item nav-link {% if 'menu' in request.path %} active {% endif%}">Sifariş</a>
+                        class="nav-item nav-link {% if 'menu' in request.path %} active {% endif%}">Order</a>
                     {% endif %}
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Rəy</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Comment</a>
                         <div class="dropdown-menu">
-                            <a href="/articles/addarticle" class="dropdown-item">Yorum Et</a>
-                            <a href="/articles/single" class="dropdown-item">Yorumlar</a>
+                            <a href="/articles/addarticle" class="dropdown-item">Give feedback</a>
+                            <a href="/articles/single" class="dropdown-item">Comments</a>
                         </div>
                     </div>
 
                     <a href="/contact" aria-hidden="true"
-                        class="nav-item nav-link {% if 'contact' in request.path %} active {% endif%}">Əlaqə</a>
+                        class="nav-item nav-link {% if 'contact' in request.path %} active {% endif%}">Contact</a>
 
                     {% if request.user.is_authenticated %}
                     <a href="/articles/dashboard" aria-hidden="true"
@@ -94,7 +94,7 @@
                     <a href="/user/logout" aria-hidden="true" class="nav-item nav-link"><i
                             class="fa-solid fa-right-from-bracket"></i></a>
                     {% else %}
-                    <a href="/user/login" class="btn btn-success nav-item nav-link">Daxil Ol</a>
+                    <a href="/user/login" class="btn btn-success nav-item nav-link">Login</a>
                     {% endif %}
 
                 </div>

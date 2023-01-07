@@ -1,47 +1,49 @@
-from django.shortcuts import render, redirect
-from .forms import CreateUserForm
 from django.contrib import messages
+from django.urls import reverse_lazy
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import login, authenticate, logout
-# from .decorators import unauthenticated_user
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.views import generic
+from django.contrib.messages.views import SuccessMessageMixin
 
-# Create your views here.
 
-# @unauthenticated_user
-
-
-def registerPage(request):
-    form = CreateUserForm()
-    if request.method == 'POST':
-        form = CreateUserForm(request.POST)
+def SignupPage(request):   
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
         if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, f"Account was created for {user}")
-            return redirect('user:login')
+            user = form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f"New account created: {username}")
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+        else:
+            messages.error(request, "Account creation failed")
 
-    context = {'form': form}
-    return render(request, "register.html", context)
+        return redirect("index")
+
+    form = UserCreationForm()
+    return render(request, "register.html", {"form": form})
 
 
-# @unauthenticated_user
-def loginPage(request):
+def LoginPage(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-
+        pass1 = request.POST.get('pass')
+        user = authenticate(request, username=username, password=pass1)
         if user is None:
-            messages.warning(request, 'Username or password incorrect')
+            return HttpResponse("Username or Password is incorrect!!!")
 
-        else:
-            login(request, user)
-            return redirect('index')
-
-    context = {}
-    return render(request, "login.html", context)
+        login(request, user)
+        return redirect('index')
+    return render(request, 'login.html')
 
 
-def logoutUser(request):
+def LogoutPage(request):
     logout(request)
-    return redirect("index")
+    return redirect('user:login')
+
+
+class DeleteUser(SuccessMessageMixin,generic.DeleteView):
+    model = User
+    template_name = 'delete_user_confirm.html'
+    success_url  = reverse_lazy('index')

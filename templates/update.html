@@ -20,14 +20,14 @@
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <br>
-        <h3>Sənin düşüncələrini maraqla gözləyirik </h3>
+        <h3>We look forward to your thoughts </h3>
         <hr>
         <form enctype="multipart/form-data" method='post'>
             {% csrf_token %}
             {{form|crispy}}
             <br>
-            <button type="submit" class='btn btn-warning'>Güncəllə</button>
-            <button type="submit" href="/articles/update" class='btn btn-danger'>Geri Dön</button>
+            <button type="submit" class='btn btn-warning'>Update</button>
+            <button type="submit" href="/articles/update" class='btn btn-danger'>Back</button>
 
         </form>
     </div>

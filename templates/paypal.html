@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>Ödəniş Bölməsi</h2>
+                <h2>Payment Section</h2>
             </div>
         </div>
     </div>
@@ -15,35 +15,35 @@
 <!-- Page Header End -->
 
 <div class="wrapper">
-    <h2>Ödəniş forması</h2>
+    <h2>Payment form</h2>
     <form action="" method="post">
         <!--Account Information Start-->
-        <h4>Hesab</h4>
+        <h4>Account</h4>
         <div class="input_group">
             <div class="input_box">
-                <input type="text" placeholder="Ad / Soyad" required class="name">
+                <input type="text" placeholder="Name / Surname" required class="name">
                 <i class="fa fa-user icon"></i>
             </div>
             <div class="input_box">
-                <input type="text" placeholder="Kart Üzərindəki Ad" required class="name">
+                <input type="text" placeholder="Name on Card" required class="name">
                 <i class="fa fa-user icon"></i>
             </div>
         </div>
         <div class="input_group">
             <div class="input_box">
-                <input type="email" placeholder="Email Ünvanı" required class="name">
+                <input type="email" placeholder="Email Address" required class="name">
                 <i class="fa fa-envelope icon"></i>
             </div>
         </div>
         <div class="input_group">
             <div class="input_box">
-                <input type="text" placeholder="Ünvan" required class="name">
+                <input type="text" placeholder="Address" required class="name">
                 <i class="fa fa-map-marker icon" aria-hidden="true"></i>
             </div>
         </div>
         <div class="input_group">
             <div class="input_box">
-                <h6>Çatdırılma yalnız Bakı şəhərində mövcuddur!!!</h6>
+                <h6>Delivery is available only in Baku!!!</h6>
 
             </div>
         </div>
@@ -53,17 +53,17 @@
         <!--DOB & Gender Start-->
         <div class="input_group">
             <div class="input_box">
-                <h4>Doğum Tarixi</h4>
+                <h4>Date of birth</h4>
                 <input maxlength="2" type="text" placeholder="DD" required class="dob">
                 <input maxlength="2" type="text" placeholder="MM" required class="dob">
                 <input maxlength="4" type="text" placeholder="YYYY" required class="dob">
             </div>
             <div class="input_box">
-                <h4>Cins</h4>
+                <h4>Gender</h4>
                 <input type="radio" name="gender" class="radio" id="b1" checked>
-                <label for="b1">Kişi</label>
+                <label for="b1">Male</label>
                 <input type="radio" name="gender" class="radio" id="b2">
-                <label for="b2">Qadın</label>
+                <label for="b2">Female</label>
             </div>
         </div>
         <!--DOB & Gender End-->
@@ -72,19 +72,20 @@
         <!--Payment Details Start-->
         <div class="input_group">
             <div class="input_box">
-                <h4>Ödəniş Detalları</h4>
+                <h4>Payment Details</h4>
                 <input type="radio" name="pay" class="radio" id="bc1" checked>
                 <label for="bc1"><span>
-                        <i class="fa fa-cc-visa"></i>Kredit Kartı</span></label>
+                    <i class="fa-solid fa-credit-card"></i> Credit Card</span></label>
                 <input type="radio" name="pay" class="radio" id="bc2">
                 <label for="bc2"><span>
-                        <i class="fa fa-cc-paypal"></i>PayPal</span></label>
+                    <i class="fa-brands fa-paypal"></i> PayPal</span></label>
             </div>
         </div>
         <div class="input_group">
             <div class="input_box">
+                
                 <input maxlength="16" type="tel" name="" class="name" placeholder=" XXXX-XXXX-XXXX-XXXX" required>
-                <i class="fa fa-credit-card icon"></i>
+                <i class="fa fa-user icon"></i>
             </div>
         </div>
         <div class="input_group">
@@ -96,7 +97,7 @@
         <div class="input_group">
             <div style="width:100px;" class="input_box">
                 <div class="input_box">
-                    <h4>İl</h4>
+                    <h4>Year</h4>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>2022</option>
                         <option>2023</option>
@@ -111,7 +112,7 @@
                 </div>
             </div>
             <div style="width:100px;" class="input_box">
-                <h4>Ay</h4>
+                <h4>Month</h4>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>1</option>
                     <option>2</option>
@@ -131,15 +132,15 @@
         <div class="custom-control custom-checkbox">
             <br>
             <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1"><span style="font-weight: bold;">3d secure</span> ilə
-                ödəniş etmək istəyirəm</label>
+            <label class="custom-control-label" for="customCheck1">I want to pay with <span style="font-weight: bold;">3d secure</span>
+            </label>
         </div>
         <!--Payment Details End-->
 
         <div class="input_group">
             <div class="input_box">
-                <button id="paypal-alert" type="button">Ödəniş Et</button><br><br>
-                <a class="btn btn-danger" href="/menu">Geri Dön</a>
+                <button id="paypal-alert" type="button">Pay</button><br><br>
+                <a class="btn btn-danger" href="/menu">Back</a>
             </div>
         </div>
 </div>
@@ -151,8 +152,8 @@
 <script>
     document.getElementById('paypal-alert').addEventListener('click', function () {
         Swal.fire(
-            'Təşəkkürlər!',
-            'Sifarişiniz Qəbul Oldu !',
+            'Thanks!',
+            'Your order has been accepted !',
             'success'
         )
     });

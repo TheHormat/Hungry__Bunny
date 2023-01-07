@@ -23,6 +23,7 @@ from home.views import (
 app_name = 'blog'
 
 urlpatterns = [
+    # Template urls
     path('admin/', admin.site.urls),
     path('', home_view, name='index'),
     path('about/', about_view, name='about'),
@@ -32,21 +33,24 @@ urlpatterns = [
     path('faq/', faq_view, name='faq'),
     path('paypal/', paypal_view, name='paypal'),
     path('terms/', terms_view, name='terms'),
-
     path('user/', include('user.urls')),
     path('articles/', include('article.urls', namespace='article')),
     
-    
+    # API urls
     path('api/post/', include('api.urls',namespace='post')),
     path('api/article/', include('article.api.urls')),
     path('api/account/', include('user.api.urls')),
 
-
+    # Media urls
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     url(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
     
+    # JWT urls
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # Allauth urls
+    path('',include('allauth.urls')),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

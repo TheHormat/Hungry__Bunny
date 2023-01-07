@@ -17,7 +17,7 @@ class Post(models.Model):
         User, on_delete=models.SET_NULL, null=True, related_name='modified_by')
 
     slug = models.SlugField(unique=True, max_length=120, editable=False)
-    
+
     def __str__(self):
         return f'{self.title}'
 
@@ -43,7 +43,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     note = models.CharField(max_length=200)
     gmail = models.CharField(max_length=200)
-    
+
     def __str__(self):
         return f'{self.user}'
 
@@ -53,3 +53,4 @@ def create_user_profile(sender, instance, created, **kwargs):
     if created:
         Profile.objects.create(user=instance)
     instance.profile.save()
+    

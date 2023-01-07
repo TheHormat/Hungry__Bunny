@@ -15,10 +15,10 @@ class UserSerializer(ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'first_name', 'last_name', 'profile')
-        
+
     def update(self, instance, validated_data):
         profile = validated_data.pop('profile')
-        profile_serializer = ProfileSerializer(instance.profile,data=profile)
+        profile_serializer = ProfileSerializer(instance.profile, data=profile)
         profile_serializer.is_valid(raise_exception=True)
         profile_serializer.save()
-        return super(UserSerializer,self).update(instance, validated_data)
+        return super(UserSerializer, self).update(instance, validated_data)

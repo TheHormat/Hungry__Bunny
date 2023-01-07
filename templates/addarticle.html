@@ -10,9 +10,9 @@
         <div class="row">
             <div class="col-12">
                 {% if request.user.is_authenticated %}
-                <h2>Rəy Bildir</h2>
+                <h2>Give feedback</h2>
                 {% else %}
-                <h2>İlk olaraq hesabınıza daxil olun</h2>
+                <h2>First, log in to your account !</h2>
                 {% endif %}
             </div>
 
@@ -23,14 +23,15 @@
 {% if request.user.is_authenticated %}
 <div style="background-color:#fdbe33;" class="row">
     <div class="col-md-6 offset-md-3">
-        <center style="color: white; font-size:30px; font-family: 'Nunito', sans-serif;">Bizə Sizin Fikirləriniz
-            Maraqlıdır </center>
+        <center style="color: white; font-size:30px; font-family: 'Nunito', sans-serif;">We are interested in your
+            thoughts
+        </center>
         <hr>
         <form class="addarticle" method='post'>
             {% csrf_token %}
             {{form|crispy}}
             <br>
-            <button style="margin-bottom: 10px;" type="submit" class='btn btn-success'>Paylaş</button>
+            <button style="margin-bottom: 10px;" type="submit" class='btn btn-success'>Share</button>
 
         </form>
     </div>
