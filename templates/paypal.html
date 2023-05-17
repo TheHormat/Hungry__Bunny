@@ -75,15 +75,15 @@
                 <h4>Payment Details</h4>
                 <input type="radio" name="pay" class="radio" id="bc1" checked>
                 <label for="bc1"><span>
-                    <i class="fa-solid fa-credit-card"></i> Credit Card</span></label>
+                        <i class="fa-solid fa-credit-card"></i> Credit Card</span></label>
                 <input type="radio" name="pay" class="radio" id="bc2">
                 <label for="bc2"><span>
-                    <i class="fa-brands fa-paypal"></i> PayPal</span></label>
+                        <i class="fa-brands fa-paypal"></i> PayPal</span></label>
             </div>
         </div>
         <div class="input_group">
             <div class="input_box">
-                
+
                 <input maxlength="16" type="tel" name="" class="name" placeholder=" XXXX-XXXX-XXXX-XXXX" required>
                 <i class="fa fa-user icon"></i>
             </div>
@@ -132,7 +132,8 @@
         <div class="custom-control custom-checkbox">
             <br>
             <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">I want to pay with <span style="font-weight: bold;">3d secure</span>
+            <label class="custom-control-label" for="customCheck1">I want to pay with <span
+                    style="font-weight: bold;">3d secure</span>
             </label>
         </div>
         <!--Payment Details End-->
@@ -143,11 +144,9 @@
                 <a class="btn btn-danger" href="/menu">Back</a>
             </div>
         </div>
+    </form>
 </div>
 
-{% csrf_token %}
-</form>
-</div>
 
 <script>
     document.getElementById('paypal-alert').addEventListener('click', function () {

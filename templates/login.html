@@ -57,7 +57,7 @@
     }
 
     form {
-      height: 520px;
+      height: 580px;
       width: 400px;
       background-color: rgba(255, 255, 255, 0.13);
       position: absolute;
@@ -168,6 +168,18 @@
       margin-right: 10px;
     }
 
+    #user__link{
+      margin: 20px;
+    }
+
+    #user__link p{
+      margin-top: 10px;
+    }
+
+    #create__account{
+      text-decoration-line: none;
+    }
+
   </style>
 </head>
 
@@ -189,7 +201,9 @@
     <input required type="password" placeholder="Password" id="password" name="pass">
 
     <button style="margin-top: 20px;" type="submit">Log In</button>
-    <a href="{% url 'user:signup' %}">Create a account</a>
+    <center id="user__link">
+      <a id="create__account" href="{% url 'user:signup' %}">Don't have an account? <span style="color: blue;">Sign Up</span></a>
+    </center>
   </form>
 </body>
 

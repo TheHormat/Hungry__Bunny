@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n %}
 <!-- Footer Start -->
 <div class="footer">
     <div class="container">
@@ -8,8 +8,8 @@
                 <div class="row">
                     <div class="col-md-4 ">
                         <div class="footer-contact">
-                            <h2> Our Address</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>Baku, 51 Zahid Khalilov </p>
+                            <h2> {% trans "Our Address" %}</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>{% trans "Baku, 51 Zahid Khalilov" %} </p>
                             <p><i class="fa fa-phone-alt"></i>+994 070 494 91 11</p>
                             <p><i class="fa fa-envelope"></i>info@gmail.com</p>
                             <div class="footer-social">
@@ -25,21 +25,21 @@
                     </div>
                     <div class="col-md-4">
                         <div class="footer-link">
-                            <h2>Shortcuts</h2>
-                            <a href="/">Home</a>
-                            <a href="/menu">Menus</a>
-                            <a href="/contact">Contact</a>
-                            <a href="/booking">Reservation</a>
-                            <a href="/terms">Terms of Service</a>
+                            <h2>{% trans "Shortcuts" %}</h2>
+                            <a href="/">{% trans "Home" %}</a>
+                            <a href="/menu">{% trans "Menus" %}</a>
+                            <a href="/contact">{% trans "Contact" %}</a>
+                            <a href="/booking">{% trans "Reservation" %}</a>
+                            <a href="/terms">{% trans "Terms of Service" %}</a>
                             <a href="/faq">FAQ</a>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="footer-contact">
-                            <h2>Our Hours of Operation :</h2>
+                            <h2>{% trans "Our Hours of Operation" %} :</h2>
 
-                            <p><i class="fa-solid fa-calendar-days"></i>Every Day of the Week</p>
+                            <p><i class="fa-solid fa-calendar-days"></i>{% trans "Every Day of the Week" %}</p>
                             <p><i class="fa-solid fa-clock"></i>9:00 - 23:00</p>
                         </div>
                     </div>
@@ -48,13 +48,13 @@
             </div>
             <div class="col-lg-5">
                 <div class="footer-newsletter">
-                    <h2>Be aware</h2>
+                    <h2>{% trans "Be aware" %}</h2>
                     <p>
-                        Learn new news about us by mail.
+                        {% trans "Learn new news about us by mail." %}
                     </p>
                     <div class="form">
-                        <input style="color: white;" class="form-control" placeholder="Enter your email address">
-                        <button id="sendmail" class="btn custom-btn">Send</button>
+                        <input style="color: white;" class="form-control" placeholder="{% trans 'Enter your email address' %}">
+                        <button id="sendmail" class="btn custom-btn">{% trans "Send" %}</button>
                     </div>
                 </div>
             </div>

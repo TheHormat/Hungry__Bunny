@@ -1,10 +1,19 @@
+# Created by https://www.toptal.com/developers/gitignore/api/python
+# Edit at https://www.toptal.com/developers/gitignore?templates=python
+.idea/
+### Python ###
 # Byte-compiled / optimized / DLL files
-__pycache__/
+_pycache_/
 *.py[cod]
 *$py.class
-
+!**/__pycache__/
 # C extensions
 *.so
+
+.vscode/
+
+pgdb/
+8000
 
 # Distribution / packaging
 .Python
@@ -50,10 +59,10 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+pytestdebug.log
 
 # Translations
-*.mo
-*.pot
+
 
 # Django stuff:
 *.log
@@ -70,7 +79,9 @@ instance/
 
 # Sphinx documentation
 docs/_build/
-
+doc/_build/
+venv/
+media/
 # PyBuilder
 target/
 
@@ -92,7 +103,7 @@ ipython_config.py
 #Pipfile.lock
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow
-__pypackages__/
+_pypackages_/
 
 # Celery stuff
 celerybeat-schedule
@@ -102,13 +113,12 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
 env/
-venv/
 ENV/
 env.bak/
 venv.bak/
+pythonenv*
 
 # Spyder project settings
 .spyderproject
@@ -127,3 +137,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# profiling data
+.prof
+
+
+
+# End of https://www.toptal.com/developers/gitignore/api/python

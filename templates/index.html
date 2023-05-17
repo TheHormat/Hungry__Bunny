@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block section %}
 
@@ -300,7 +301,8 @@
                             <i class="flaticon-cooking"></i>
                             <h3>The most skilled craftsmen</h3>
                             <p>
-                                The most skilled and talented chefs from 4 corners of the world and our country are with us.
+                                The most skilled and talented chefs from 4 corners of the world and our country are with
+                                us.
                             </p>
                         </div>
                     </div>
@@ -320,8 +322,9 @@
                             <i class="flaticon-medal"></i>
                             <h3>Best Quality Products</h3>
                             <p>
-                                The fact that our products are natural, clean and delicious distinguishes us from others.
-                            </p> 
+                                The fact that our products are natural, clean and delicious distinguishes us from
+                                others.
+                            </p>
 
                         </div>
                     </div>
@@ -330,7 +333,8 @@
                             <i class="flaticon-meat"></i>
                             <h3>Fresh Vegetables and Meats</h3>
                             <p>
-                                Our meats have been checked by many companies and their storage conditions and cleanliness have been confirmed.
+                                Our meats have been checked by many companies and their storage conditions and
+                                cleanliness have been confirmed.
                             </p>
                         </div>
                     </div>
@@ -350,7 +354,8 @@
                             <i class="flaticon-fruits-and-vegetables"></i>
                             <h3>Hygienic Products</h3>
                             <p>
-                                The fact that our products are natural, clean and tasty makes us different from others.                            </p>
+                                The fact that our products are natural, clean and tasty makes us different from others.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -675,19 +680,34 @@
             <div class="col-md-6">
                 <form method="POST">
                     {% csrf_token %}
-                    {{form}}
-                    
                     <div>
-                        <button id="formbtn" style="margin-top: 4px;" class="btn custom-btn" type="submit"> Send</button>
+                        <label for="">Name: </label>
+                        {{form.name}}
+                        <label for="{{ form.mail_address.id_for_label }}">Email Address:</label>
+                        {{ form.mail_address }}
+                        {{ form.mail_address.errors }}
+                        <label for="">Messages: </label>
+                        {{form.messages}}
+                    </div>
+
+                    <div>
+                        <button id="formbtn" style="margin-top: 4px;" class="btn custom-btn" type="submit"> {% trans "Send" %}</button>
                     </div>
 
                     <script>
-                        document.getElementById('formbtn').addEventListener('click', function () {
+                        document.getElementById('myForm').addEventListener('submit', function (event) {
+                            if (!event.target.checkValidity()) {
+                                return;
+                            }
+                            event.preventDefault();
+
                             Swal.fire(
                                 'Your message has been sent',
-                                'You will get back to us soon !',
+                                'You will get back to us soon!',
                                 'success'
-                            )
+                            ).then(() => {
+                                document.getElementById('myForm').submit();
+                            });
                         });
                     </script>
                 </form>

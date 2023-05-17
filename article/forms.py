@@ -20,7 +20,7 @@ class SendMailMessageForm(forms.ModelForm):
         }
         widgets = {
             'name':forms.TextInput(attrs={'class':'form-control'}),
-            'mail_address':forms.EmailInput(attrs={'class':'form-control'}),
+            'mail_address':forms.EmailInput(attrs={'class':'form-control','required':True}),
             'messages':forms.Textarea(attrs={'class':'form-control'})
 
         }

@@ -1,13 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block section %}
+
 <!-- Page Header Start -->
 <div class="page-header">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h2>Contact Us For Any Questions</h2>
+                <h2>{% trans "Contact Us For Any Questions" %}</h2>
             </div>
         </div>
     </div>
@@ -28,36 +30,36 @@
                             <div style="margin: 10px;" class="card wow fadeInLeft" data-wow-delay="0.1s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseOne">
-                                        Having problems with orders ?
+                                        {% trans "Having problems with orders" %} ?
                                     </a>
                                 </div>
                                 <div id="collapseOne" class="collapse" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        Contact us by email and we will solve your problems.
+                                        {% trans "Contact us by email and we will solve your problems" %}.
                                     </div>
                                 </div>
                             </div>
                             <div style="margin: 10px;" class="card wow fadeInLeft" data-wow-delay="0.2s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseTwo">
-                                        Can't find the address ?
+                                       {% trans " Can't find the address" %} ?
                                     </a>
                                 </div>
                                 <div id="collapseTwo" class="collapse" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        The exact address of each of our branches is given on our page.
+                                        {% trans "The exact address of each of our branches is given on our page" %}.
                                     </div>
                                 </div>
                             </div>
                             <div style="margin: 10px;" class="card wow fadeInLeft" data-wow-delay="0.3s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseThree">
-                                        Is it possible to pay by card?
+                                        {% trans "Is it possible to pay by card" %} ?
                                     </a>
                                 </div>
                                 <div id="collapseThree" class="collapse" data-parent="#accordion-1">
                                     <div class="card-body">
-                                        Yes, all payment options are available.
+                                        {% trans "Yes, all payment options are available" %}.
                                     </div>
                                 </div>
                             </div>
@@ -69,37 +71,41 @@
                             <div style="margin: 10px;" class="card wow fadeInRight" data-wow-delay="0.1s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseSix">
-                                        How many people can be accommodated in the space ?
+                                        {% trans "How many people can be accommodated in the space" %} ?
                                     </a>
                                 </div>
                                 <div id="collapseSix" class="collapse" data-parent="#accordion-2">
                                     <div class="card-body">
+                                        
+                                        {% blocktrans %}
                                         80, this is available around 8 separate tables with seating for a maximum of 10
                                         people.
+                                        {% endblocktrans %}
+                                        
                                     </div>
                                 </div>
                             </div>
                             <div style="margin: 10px;" class="card wow fadeInRight" data-wow-delay="0.2s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseSeven">
-                                        Is it possible to come to the place as a whole family ?
+                                        {% trans "Is it possible to come to the place as a whole family" %} ?
                                     </a>
                                 </div>
                                 <div id="collapseSeven" class="collapse" data-parent="#accordion-2">
                                     <div class="card-body">
-                                        Yes, you can easily invite all your friends and family members to us.
+                                        {% trans "Yes, you can easily invite all your friends and family members to us" %}.
                                     </div>
                                 </div>
                             </div>
                             <div style="margin: 10px;" class="card wow fadeInRight" data-wow-delay="0.3s">
                                 <div class="card-header">
                                     <a class="card-link collapsed" data-toggle="collapse" href="#collapseEight">
-                                        Where else are your venues available?
+                                        {% trans "Where else are your venues available" %} ?
                                     </a>
                                 </div>
                                 <div id="collapseEight" class="collapse" data-parent="#accordion-2">
                                     <div class="card-body">
-                                        May 28, Nizami and Narmanov other branches are available, you can come.
+                                        {% trans "May 28, Nizami and Narmanov other branches are available, you can come" %}.
                                     </div>
                                 </div>
                             </div>
@@ -119,8 +125,8 @@
                         <i class="fa fa-map-marker-alt"></i>
                     </div>
                     <div class="contact-text">
-                        <h3>Address</h3>
-                        <p>Baku <i style="color: #fdbe33;" class="fa-solid fa-arrows-left-right"></i> 28 May Mst </p>
+                        <h3>{% trans "Address" %}</h3>
+                        <p>{% trans "Baku" %} <i style="color: #fdbe33;" class="fa-solid fa-arrows-left-right"></i> 28 May Mst </p>
                     </div>
                 </div>
             </div>
@@ -130,7 +136,7 @@
                         <i class="fa fa-phone-alt"></i>
                     </div>
                     <div class="contact-text">
-                        <h3>Call</h3>
+                        <h3>{% trans "Call" %}</h3>
                         <p>+994 070 494 91 11</p>
                     </div>
                 </div>
@@ -152,7 +158,7 @@
                         <i class="fa fa-share"></i>
                     </div>
                     <div class="contact-text">
-                        <h3>Follow us</h3>
+                        <h3>{% trans "Follow us" %}</h3>
                         <div class="contact-social">
                             <a href=""><i class="fab fa-facebook-f"></i></a>
                             <a href=""><i class="fab fa-youtube"></i></a>
@@ -174,10 +180,18 @@
             <div class="col-md-6">
                 <form method="POST">
                     {% csrf_token %}
-                    {{form}}
-
                     <div>
-                        <button style="margin-top: 4px;" class="btn custom-btn" type="submit"> Send</button>
+                        <label for="">Name: </label>
+                        {{form.name}}
+                        <label for="{{ form.mail_address.id_for_label }}">Email Address:</label>
+                        {{ form.mail_address }}
+                        {{ form.mail_address.errors }}
+                        <label for="">Messages: </label>
+                        {{form.messages}}
+                    </div>
+                    
+                    <div>
+                        <button id="formbtn" style="margin-top: 4px;" class="btn custom-btn" type="submit"> {% trans "Send" %}</button>
                     </div>
                 </form>
             </div>

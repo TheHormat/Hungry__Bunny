@@ -1,7 +1,7 @@
-
-from datetime import timedelta
 import os
 from pathlib import Path
+from datetime import timedelta
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-724sn8#_t-l-8uk7%nay$z=-3f=7!ma1a*4^ikp9h80_f6=!wq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -53,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -108,13 +109,29 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
+
+
+# LANGUAGE Section
+
+LANGUAGE_CODE = 'en'
+
+# LANGUAGES = (
+#     ('en', _('English')),
+#     ('az', _('Azerbaijani')),
+# )
+
+# LOCALE_PATHS = [
+#     BASE_DIR / 'locale/',
+# ]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -190,9 +207,14 @@ SOCIALACCOUNT_PROVIDERS = {
 
 
 # Email Settings
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = '587'
-EMAIL_HOST_USER = 'hemidovhormet2@gmail.com'
-EMAIL_HOST_PASSWORD = 'webdev20222'
-EMAIL_USE_TLS = False
+# settings.py
+
+# E-posta ayarları
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # E-posta gönderimi için SMTP backend'i kullanılacak
+EMAIL_HOST = 'smtp.example.com'  # SMTP sunucusunun adresini buraya yazın
+EMAIL_PORT = 587  # SMTP sunucusunun port numarasını buraya yazın
+EMAIL_HOST_USER = 'hemidovhormet2@gmail.com'  # E-posta hesabınızın kullanıcı adını buraya yazın
+EMAIL_HOST_PASSWORD = 'webdev20222'  # E-posta hesabınızın parolasını buraya yazın
+EMAIL_USE_TLS = True  # TLS kullanımını burada belirtin
+EMAIL_USE_SSL = False  # SSL kullanımını burada belirtin (TLS ile birlikte kullanılmaz)
+DEFAULT_FROM_EMAIL = 'hemidovhormet2@gmail.com'  # Varsayılan gönderen e-posta adresini buraya yazın
